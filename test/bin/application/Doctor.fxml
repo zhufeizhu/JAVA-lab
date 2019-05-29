@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FXMLDoctorController">
+   <children>
+      <TabPane layoutX="25.0" layoutY="20.0" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="病人列表">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="361.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TableView fx:id="PatientTable" prefHeight="400.0" prefWidth="600.0">
+                                <columns>
+                                    <TableColumn fx:id="GHID" prefWidth="120.0" resizable="false" text="挂号编号" />
+                                  <TableColumn fx:id="PATIENTNAME" prefWidth="120.0" resizable="false" text="病人名称" />
+                                  <TableColumn fx:id="GHTIME" prefWidth="240.0" resizable="false" text="挂号日期时间" />
+                                    <TableColumn fx:id="PATIENTTYPE" prefWidth="120.0" resizable="false" text="号种类别" />
+                                </columns>
+                              </TableView>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="id" prefWidth="100.0">
+                                       <HBox.margin>
+                                          <Insets top="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Button fx:id="submit1" mnemonicParsing="false" onMouseClicked="#OnSerchClicked" prefWidth="60.0" text="查询">
+                                       <HBox.margin>
+                                          <Insets left="170.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="收入列表">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="157.0" layoutY="31.0" prefHeight="361.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox prefHeight="102.0" prefWidth="600.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="75.0" text="起始时间：">
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold Italic" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <DatePicker fx:id="starttime" prefHeight="30.0" prefWidth="187.0">
+                                       <HBox.margin>
+                                          <Insets top="5.0" />
+                                       </HBox.margin>
+                                    </DatePicker>
+                                    <Label alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="75.0" text="截止时间：">
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold Italic" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <DatePicker fx:id="endtime" prefHeight="30.0" prefWidth="187.0">
+                                       <HBox.margin>
+                                          <Insets top="5.0" />
+                                       </HBox.margin>
+                                    </DatePicker>
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="DoctorTable" prefHeight="353.0" prefWidth="600.0">
+                                <columns>
+                                  <TableColumn fx:id="KSNAME" prefWidth="100.0" resizable="false" text="科室名称" />
+                                  <TableColumn fx:id="DOCID" prefWidth="100.0" resizable="false" text="医生编号" />
+                                    <TableColumn fx:id="DOCNAME" editable="false" prefWidth="100.0" resizable="false" text="医生名称" />
+                                    <TableColumn fx:id="DOCTORTYPE" prefWidth="100.0" resizable="false" text="号种类别" />
+                                    <TableColumn fx:id="NUM" prefWidth="100.0" resizable="false" text="挂号人次" />
+                                    <TableColumn fx:id="INCOME" prefWidth="100.0" resizable="false" text="收入合计" />
+                                </columns>
+                              </TableView>
+                              <Button fx:id="submit2" mnemonicParsing="false" onMouseClicked="#TwoClicked" prefWidth="60.0" text="查询">
+                                 <VBox.margin>
+                                    <Insets left="270.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="退出系统">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="96.0" layoutY="51.0" prefHeight="361.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="200.0" prefWidth="400.0" text="确定退出系统" textAlignment="JUSTIFY">
+                                 <font>
+                                    <Font size="65.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="100.0" top="50.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Button fx:id="submit3" mnemonicParsing="false" onMouseClicked="#OnThreeClicked" prefHeight="50.0" prefWidth="100.0" text="确定">
+                                 <VBox.margin>
+                                    <Insets left="250.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
